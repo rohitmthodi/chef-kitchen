@@ -12,7 +12,7 @@ const Welcome = () => {
       <motion.img
         src={welcome}
         alt="Restaurant"
-        className="h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center"
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2 }}
@@ -56,8 +56,8 @@ const Welcome = () => {
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => navigate("/home")}
-          className="mt-10 rounded-full bg-[#B65E2E] text-white px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-[#C76A35] hover:shadow-[0_0_25px_rgba(182,94,46,0.4)]"
+          onClick={() => navigate("/home/menu-cards")}
+          className="mt-10 rounded-2xl bg-[#B65E2E] text-white px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-300 hover:bg-[#C76A35] hover:shadow-[0_0_25px_rgba(182,94,46,0.4)]"
         >
           Explore Menu
         </motion.button>

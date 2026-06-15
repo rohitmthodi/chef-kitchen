@@ -1,22 +1,22 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
+import { Outlet } from "react-router-dom";
 
-const Layout = () => {
+const Home = () => {
   return (
-    <div className="flex bg-[#121212] text-white">
+    <div className="flex h-screen overflow-hidden bg-[#2f2b2b]">
       <Sidebar />
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col flex-1">
         <Navbar />
 
-        <main className="p-4">
+        <div className="flex-1 overflow-y-auto bg-[#111]">
           <Outlet />
-        </main>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default Home;

@@ -9,9 +9,9 @@ const Sidebar = () => {
       <aside className="hidden sm:flex h-screen w-25 flex-col bg-[#1c1b1b] border-r border-[#222]">
         
         {/* LOGO */}
-        <div className="h-20 sm:h-16 px-4 sm:px-6 flex items-center justify-center">
+        <div className="h-20 sm:h-16 px-4 sm:px-6 py-12 flex items-center justify-center">
           <img
-            src="logo.svg"
+            src="/logo.svg"
             alt="logo"
             className="h-12 w-12 sm:h-14 sm:w-14"
           />
@@ -36,7 +36,7 @@ const Sidebar = () => {
       </aside>
 
       {/* MOBILE BOTTOM BAR */}
-      <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-[#1c1b1b] border-t border-[#222] flex items-center justify-around py-3 z-50">
+      <nav className="fixed bottom-0 left-0 right-0 sm:hidden bg-[#1c1b1b] border-t border-[#222] flex items-center justify-around py-5 z-50 rounded-t-2xl">
         {sidebarItems.map((item, index) => (
           <NavLink
             key={index}
