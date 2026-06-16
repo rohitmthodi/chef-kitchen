@@ -1,9 +1,10 @@
 import { FaHome, FaUtensils, FaHeart, FaBell } from "react-icons/fa";
-import food1 from "../assets/food1.jpg"
-import food2 from "../assets/food2.jpg"
-import food3 from "../assets/food3.jpg"
+import food1 from "../assets/food1.jpg";
+import food2 from "../assets/food2.jpg";
+import food3 from "../assets/food3.jpg";
+import { FaThLarge, FaBoxOpen, FaClipboardList } from "react-icons/fa";
 
-// SIDEBAR-TABS
+// SIDEBAR TABS
 export const sidebarItems = [
   {
     icon: FaHome,
@@ -33,7 +34,7 @@ export const formatFullDate = (date = new Date()) => {
   }).format(date);
 };
 
-// NAVBAR-CATEGORIES
+// NAVBAR CATEGORIES
 export const navbarCategories = [
   {
     label: "All",
@@ -49,7 +50,7 @@ export const navbarCategories = [
   },
 ];
 
-// DUMMY-FOOD-ITEMS
+// DUMMY FOOD ITEMS
 export const menuItems = [
   {
     id: 1,
@@ -131,4 +132,34 @@ export const menuItems = [
     sizes: ["S", "M", "L"],
     stock: 11,
   },
+];
+
+// DASHBOARD SIDEBAR TABS
+export const sidebarTabs = [
+  {
+    label: "CATEGORIES",
+    path: "/admin/categories",
+    icon: FaThLarge,
+  },
+  {
+    label: "PRODUCTS",
+    path: "/admin/products",
+    icon: FaBoxOpen,
+  },
+  {
+    label: "ORDERS",
+    path: "/admin/orders",
+    icon: FaClipboardList,
+  },
+];
+
+// DASHBOARD PRODUCT TABLE
+export const productTableHead = [
+  { label: "Image", align: "left" },
+  { label: "Name", align: "left" },
+  { label: "Category", align: "left" },
+  { label: "Stock", align: "left" },
+  { label: "Price", align: "left" },
+  { label: "Order Type", align: "left" },
+  { label: "Actions", align: "right" },
 ];

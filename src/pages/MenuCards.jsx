@@ -82,7 +82,7 @@ const MenuCards = () => {
               </p>
 
               {/* BUTTON */}
-              <button className="mt-3 w-full bg-[#B65E2E] hover:bg-[#C76A35] transition py-2 rounded-md text-xs sm:text-sm font-medium">
+              <button className="mt-3 w-full bg-[#B65E2E] hover:bg-[#C76A35] transition py-2 rounded-md text-xs sm:text-sm font-medium cursor-pointer">
                 Add to Cart
               </button>
 

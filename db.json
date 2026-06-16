@@ -1,0 +1,14 @@
+{
+  "categories": [
+    {
+      "name": "s",
+      "id": "fuTumwSOBrM"
+    },
+    {
+      "name": "ssssssss",
+      "id": "8YXyI5C28O0"
+    }
+  ],
+  "products": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -12,10 +12,10 @@ const Navbar = () => {
         {/* LEFT */}
         <div className="cursor-default">
           <h1 className="text-2xl font-semibold text-white">
-            Chef Kitchen
+            CHEF KITCHEN
           </h1>
 
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 font-medium tracking-wider">
             {formatFullDate()}
           </p>
         </div>
