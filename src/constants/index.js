@@ -1,8 +1,10 @@
-import { FaHome, FaUtensils, FaHeart, FaBell } from "react-icons/fa";
+import { FaHome, FaUtensils, FaHeart, FaBell, FaClipboardList } from "react-icons/fa";
+import { GiCookingPot, GiOlive  } from "react-icons/gi";
+import { MdFastfood } from "react-icons/md";
+import { GiMeal } from "react-icons/gi";
 import food1 from "../assets/food1.jpg";
 import food2 from "../assets/food2.jpg";
 import food3 from "../assets/food3.jpg";
-import { FaTachometerAlt, FaThLarge, FaBoxOpen, FaClipboardList } from "react-icons/fa";
 
 // SIDEBAR TABS
 export const sidebarItems = [
@@ -134,26 +136,39 @@ export const menuItems = [
   },
 ];
 
-// DASHBOARD SIDEBAR TABS
 export const sidebarTabs = [
   {
     label: "DASHBOARD",
     path: "/admin/dashboard",
-    icon: FaTachometerAlt,
+    icon: GiOlive, // 🍲 kitchen overview
   },
   {
     label: "CATEGORIES",
-    path: "/admin/categories",
-    icon: FaThLarge,
+    path: "/admin/category",
+    icon: GiCookingPot, // 🫒 food/ingredient grouping
   },
   {
-    label: "PRODUCTS",
+    label: "MENU ITEMS",
     path: "/admin/products",
-    icon: FaBoxOpen,
+    icon: MdFastfood,
   },
   {
     label: "ORDERS",
     path: "/admin/orders",
-    icon: FaClipboardList,
+    icon: GiMeal,
+  },
+];
+
+// DUMMY CATEGORY DATA
+export const categoriesData = [
+  {
+    name: "Signature Pizzas",
+    description: "Hand-tossed sourdough pizzas with organic toppings.",
+    status: "Active",
+  },
+  {
+    name: "Signature Pizzas",
+    description: "Hand-tossed sourdough pizzas with organic toppings.",
+    status: "Active",
   },
 ];
