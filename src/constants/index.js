@@ -18,7 +18,7 @@ export const sidebarItems = [
   },
   {
     icon: FaHeart,
-    path: "/wishlist",
+    path: "/admin",
   },
   {
     icon: FaBell,
@@ -149,7 +149,7 @@ export const sidebarTabs = [
   },
   {
     label: "MENU ITEMS",
-    path: "/admin/products",
+    path: "/admin/menu",
     icon: MdFastfood,
   },
   {
@@ -164,11 +164,35 @@ export const categoriesData = [
   {
     name: "Signature Pizzas",
     description: "Hand-tossed sourdough pizzas with organic toppings.",
-    status: "Active",
   },
   {
     name: "Signature Pizzas",
     description: "Hand-tossed sourdough pizzas with organic toppings.",
-    status: "Active",
+  },
+  {
+    name: "Signature Pizzas",
+    description: "Hand-tossed sourdough pizzas with organic toppings.",
+  },
+  {
+    name: "Signature Pizzas",
+    description: "Hand-tossed sourdough pizzas with organic toppings.",
+  }
+];
+
+// DUMMY MENU DATA
+export const menuData = [
+  {
+    image: "https://images.unsplash.com/photo-1600891964092-4316c288032e",
+    name: "Chicken Burger",
+    category: "Gourmet Burgers",
+    stock: 3,
+    price: "₹199 / piece",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+    name: "Red Wine",
+    category: "House Wines",
+    stock: 20,
+    price: "₹499 / glass",
   },
 ];

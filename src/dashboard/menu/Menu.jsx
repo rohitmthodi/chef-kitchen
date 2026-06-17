@@ -1,57 +1,65 @@
 import React, { useState, useEffect } from "react";
-import AddCategory from "./AddCategory";
+import AddMenu from "./AddMenu";
 
-const Categories = () => {
+const Menu = () => {
   const [open, setOpen] = useState(false);
-  const [categoriesData, setCategoriesData] = useState([]);
+  const [menuData, setMenuData] = useState([]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchMenu = async () => {
       try {
-        const res = await fetch("http://localhost:5000/categories");
+        const res = await fetch("http://localhost:5000/menu");
         const data = await res.json();
-        setCategoriesData(data);
+        setMenuData(data);
       } catch (error) {
-        console.error("Error fetching categories:", error);
+        console.error("Error fetching menu:", error);
       }
     };
 
-    fetchCategories();
+    fetchMenu();
   }, []);
 
   return (
     <div className="p-6 bg-white rounded-xl h-full overflow-y-auto relative">
-      {/* HEADER SECTION */}
+      {/* HEADER */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="cursor-default">
-          <h1 className="text-2xl font-bold text-gray-800">Categories</h1>
+          <h1 className="text-2xl font-bold text-gray-800">Menu</h1>
           <p className="text-sm text-gray-500 mt-1">
-            Organize your menu offerings into logical sections for guests and
-            staff.
+            Manage your food and beverage items with stock and pricing details.
           </p>
         </div>
 
         <button
           onClick={() => setOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 font-medium text-sm rounded-lg shadow-sm transition duration-200 cursor-pointer"
+          className="bg-blue-600 hover:bg-blue-700 text-sm font-medium text-white px-4 py-2 rounded-lg shadow-sm transition"
         >
-          ADD CATEGORY
+          ADD MENU
         </button>
       </div>
 
       {/* DIVIDER */}
       <div className="mt-5 border-b border-gray-200" />
 
-      {/* CATEGORY TABLE */}
-      <div className="mt-6 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+      {/* TABLE */}
+      <div className="mt-6 rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         <table className="w-full text-left border-collapse cursor-default">
           <thead className="bg-gray-200 sticky top-0 z-10">
             <tr>
               <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black">
-                Category Name
+                Image
               </th>
               <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black">
-                Description
+                Name
+              </th>
+              <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black">
+                Category
+              </th>
+              <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black">
+                Stock
+              </th>
+              <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black">
+                Price
               </th>
               <th className="py-4 px-4 text-xs font-bold uppercase tracking-wider text-black text-right">
                 Actions
@@ -60,23 +68,45 @@ const Categories = () => {
           </thead>
 
           <tbody className="divide-y divide-gray-100">
-            {categoriesData.length === 0 ? (
+            {menuData.length === 0 ? (
               <tr>
-                <td colSpan="3" className="py-10 text-center text-gray-500">
-                  No categories added yet
+                <td colSpan="6" className="py-10 text-center text-gray-500">
+                  No menu items added yet
                 </td>
               </tr>
             ) : (
-              categoriesData.map((item, index) => (
+              menuData.map((item, index) => (
                 <tr
                   key={index}
                   className="hover:bg-gray-50 transition-all duration-150"
                 >
-                  <td className="py-4 px-4 text-gray-900">{item.name}</td>
-
-                  <td className="py-4 px-4 text-gray-500">
-                    {item.description ? item.description : "No description"}
+                  <td className="py-4 px-4">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
                   </td>
+
+                  <td className="py-4 px-4 text-gray-900 font-medium">
+                    {item.name}
+                  </td>
+
+                  <td className="py-4 px-4 text-gray-500">{item.category}</td>
+
+                  <td className="py-4 px-4">
+                    <span
+                      className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                        item.stock > 5
+                          ? "bg-emerald-50 text-emerald-600"
+                          : "bg-red-50 text-red-500"
+                      }`}
+                    >
+                      {item.stock} in stock
+                    </span>
+                  </td>
+
+                  <td className="py-4 px-4 text-gray-700 text-sm font-medium">${item.price} / unit</td>
 
                   <td className="py-4 px-4">
                     <div className="flex items-center justify-end gap-3">
@@ -100,10 +130,7 @@ const Categories = () => {
       {open && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="w-full max-w-2xl">
-            <AddCategory
-              onClose={() => setOpen(false)}
-              existingCategories={categoriesData}
-            />
+            <AddMenu onClose={() => setOpen(false)} />
           </div>
         </div>
       )}
@@ -111,4 +138,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Menu;

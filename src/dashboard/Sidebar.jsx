@@ -13,9 +13,9 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="w-65 h-screen bg-slate-50 border-r border-slate-200 flex flex-col">
+    <aside className="w-65 h-screen bg-slate-50 flex flex-col">
       {/* Logo */}
-      <div className="px-8 py-8">
+      <div className="px-8 py-4">
         <div className="cursor-pointer text-center">
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             CHEF KITCHEN
@@ -40,7 +40,7 @@ const Sidebar = () => {
                 className={({ isActive }) =>
                   `group flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                     isActive
-                      ? "bg-slate-100 text-blue-600 shadow-sm border border-blue-100"
+                      ? "bg-slate-100 text-blue-600 shadow-sm"
                       : "text-slate-600 hover:bg-slate-100 hover:shadow-sm hover:text-slate-900"
                   }`
                 }

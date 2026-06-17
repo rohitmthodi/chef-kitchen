@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { menuItems } from "../constants";
+import React, { useState, useEffect } from "react";
 
 const MenuCards = () => {
+  const [menuItems, setMenuItems] = useState([]);
+
   const [selectedSizes, setSelectedSizes] = useState(() => {
     const defaultSizes = {};
     menuItems.forEach((item) => {
@@ -9,6 +10,20 @@ const MenuCards = () => {
     });
     return defaultSizes;
   });
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/menu");
+        const data = await res.json();
+        setMenuItems(data);
+      } catch (error) {
+        console.error("Error fetching menu:", error);
+      }
+    };
+
+    fetchMenu();
+  }, []);
 
   const handleSizeClick = (itemId, size) => {
     setSelectedSizes((prev) => ({
@@ -52,7 +67,7 @@ const MenuCards = () => {
 
               {/* SIZE SELECTOR */}
               <div className="flex justify-center gap-2 mt-2">
-                {item.sizes.map((s) => {
+                {item.sizes?.map((s) => {
                   const isSelected = selectedSizes[item.id] === s;
 
                   return (

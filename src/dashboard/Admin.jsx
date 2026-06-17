@@ -5,11 +5,13 @@ import Navbar from "./Navbar";
 
 const Admin = () => {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden bg-gray-100">
       <Sidebar />
+
       <div className="flex-1 flex flex-col">
         <Navbar />
-        <main className="flex-1 p-4">
+
+        <main className="flex-1 p-4 overflow-y-auto">
           <Outlet />
         </main>
       </div>

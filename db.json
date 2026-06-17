@@ -1,22 +1,36 @@
 {
   "categories": [
     {
-      "name": "Noodles",
-      "id": "_PUVoirWf4U"
+      "name": "Gourmet Burgers",
+      "description": "Wagyu beef and plant-based burger options.",
+      "id": "yMNbzZTs9sg"
     },
     {
-      "name": "hhhhhhhhhh",
-      "id": "LA1nC-qUdnI"
+      "name": "Signature Pizzas",
+      "description": "Hand-tossed sourdough pizzas with organic toppings.",
+      "id": "Ph1cg5tlYiY"
     },
     {
-      "name": "ggggggggggg",
-      "id": "tT98t6IsM8Q"
+      "name": "Seasonal Desserts",
+      "description": "Rotating sweet treats based on local produce.",
+      "id": "5UH98gJYdus"
     },
     {
-      "name": "Coffee",
-      "id": "XZWXaoed86o"
+      "name": " House Wines",
+      "description": "Selected local and imported wine pairings.",
+      "id": "uSC8JfacVeI"
     }
   ],
-  "products": [],
+  "menu": [
+    {
+      "name": "Biriyani",
+      "category": "Seasonal Desserts",
+      "stock": 200,
+      "price": "160",
+      "image": "blob:http://localhost:5173/17c37022-26ad-4d5c-97d7-528a4cf8942b",
+      "id": "utipGzzcA6E"
+    }
+  ],
+  "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
