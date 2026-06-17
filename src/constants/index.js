@@ -2,7 +2,7 @@ import { FaHome, FaUtensils, FaHeart, FaBell } from "react-icons/fa";
 import food1 from "../assets/food1.jpg";
 import food2 from "../assets/food2.jpg";
 import food3 from "../assets/food3.jpg";
-import { FaThLarge, FaBoxOpen, FaClipboardList } from "react-icons/fa";
+import { FaTachometerAlt, FaThLarge, FaBoxOpen, FaClipboardList } from "react-icons/fa";
 
 // SIDEBAR TABS
 export const sidebarItems = [
@@ -137,6 +137,11 @@ export const menuItems = [
 // DASHBOARD SIDEBAR TABS
 export const sidebarTabs = [
   {
+    label: "DASHBOARD",
+    path: "/admin/dashboard",
+    icon: FaTachometerAlt,
+  },
+  {
     label: "CATEGORIES",
     path: "/admin/categories",
     icon: FaThLarge,
@@ -151,15 +156,4 @@ export const sidebarTabs = [
     path: "/admin/orders",
     icon: FaClipboardList,
   },
-];
-
-// DASHBOARD PRODUCT TABLE
-export const productTableHead = [
-  { label: "Image", align: "left" },
-  { label: "Name", align: "left" },
-  { label: "Category", align: "left" },
-  { label: "Stock", align: "left" },
-  { label: "Price", align: "left" },
-  { label: "Order Type", align: "left" },
-  { label: "Actions", align: "right" },
 ];
